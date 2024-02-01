@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 01, 2024 at 11:37 AM
+-- Generation Time: Feb 01, 2024 at 07:24 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.0.28
 
@@ -28,7 +28,6 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `categories` (
-  `id` int(11) NOT NULL,
   `category` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -36,14 +35,13 @@ CREATE TABLE `categories` (
 -- Dumping data for table `categories`
 --
 
-INSERT INTO `categories` (`id`, `category`) VALUES
-(1, 'mobile'),
-(2, 'food'),
-(3, 'cloth'),
-(4, 'animal'),
-(5, 'animal'),
-(6, 'animal'),
-(7, 'animal');
+INSERT INTO `categories` (`category`) VALUES
+('animal'),
+('car'),
+('cloth'),
+('food'),
+('furniture'),
+('mobile');
 
 -- --------------------------------------------------------
 
@@ -59,6 +57,17 @@ CREATE TABLE `products` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
+-- Dumping data for table `products`
+--
+
+INSERT INTO `products` (`id`, `name`, `category`, `quaintity`) VALUES
+(1, 'samsung', 'mobile', '10'),
+(2, 'mango', 'food', '100'),
+(3, 'shirt', 'cloth', '500'),
+(4, 'cat', 'animal', '100'),
+(5, 'BMW', 'car', '1');
+
+--
 -- Indexes for dumped tables
 --
 
@@ -66,7 +75,7 @@ CREATE TABLE `products` (
 -- Indexes for table `categories`
 --
 ALTER TABLE `categories`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`category`);
 
 --
 -- Indexes for table `products`
@@ -79,16 +88,10 @@ ALTER TABLE `products`
 --
 
 --
--- AUTO_INCREMENT for table `categories`
---
-ALTER TABLE `categories`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
-
---
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

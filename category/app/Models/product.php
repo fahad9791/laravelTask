@@ -4,12 +4,17 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\product;
+use App\Models\category;
 
 
-class category extends Model
+class product extends Model
 {
     use HasFactory;
     public $timestamps = false;
+
+    public function products(){
+
+        return $this->hasMany(product::class, 'category');
+    }
 
 }

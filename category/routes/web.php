@@ -19,4 +19,7 @@ Route::get('/', function () {
 
 Route::get('/addCategory', [PagesController::class, 'addCategory'])->name('addCategory');
 Route::get('/addProduct', [PagesController::class, 'addProduct'])->name('addProduct');
+Route::get('/productList', [PagesController::class, 'productList'])->name('productList');
+Route::get('/category', [PagesController::class, 'category'])->name('category');
 Route::Post('/addCategorySubmit', [PagesController::class, 'addCategorySubmit'])->name('addCategorySubmit');
+Route::Post('/addProductSubmit', [PagesController::class, 'addProductSubmit'])->name('addProductSubmit');

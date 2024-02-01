@@ -14,6 +14,11 @@
         <input type="submit" name="submit" value="Add"><br><br>
         <a href="{{ route('addProduct') }}">Add Product</a>
 
+        <h1>Category List</h1>
+        @foreach($cat as $c)
+        <a href="">{{$c->category}}</a> <br>
+        @endforeach
+
     </form>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
